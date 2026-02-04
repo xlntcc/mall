@@ -2,7 +2,7 @@ package com.cc.user.controller;
 
 import com.cc.user.service.UserService;
 import com.xx.cc.entities.UserCreateDTO;
-import com.xx.cc.resp.ResultData;
+import com.xx.cc.common.result.Result;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,10 +31,8 @@ public class UserController {
      * @return 统一响应结果
      */
     @PostMapping("/user/create")
-    public ResultData<String> createUser(@RequestBody UserCreateDTO createDTO) {
-        // 调用服务层创建用户
+    public Result<String> createUser(@RequestBody UserCreateDTO createDTO) {
         userService.createUser(createDTO);
-        // 返回成功响应
-        return ResultData.success("创建成功！");
+        return Result.success("创建成功！");
     }
 }
