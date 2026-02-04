@@ -6,7 +6,6 @@ import com.xx.cc.common.feign.UserFeignClient;
 import com.xx.cc.common.result.Result;
 import org.springframework.stereotype.Component;
 
-import java.util.Collections;
 import java.util.List;
 
 @Component
